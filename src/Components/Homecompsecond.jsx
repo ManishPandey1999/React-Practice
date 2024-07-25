@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import fetchItems from '../Fetch_Data/Axios';
-import { FaArrowLeft, FaArrowRight, FaSearch } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-export default function Search() {
+export default function Homecompsecond() {
 
     const [moveSlide, setmoveSlide] = useState(0);
 
@@ -13,6 +13,7 @@ export default function Search() {
           setItemlist(items);
         });
     }, []);
+
 
     const movenextSlide = () => {
         console.log(itemlist.length)
@@ -28,19 +29,15 @@ export default function Search() {
 
         return (
             <>
-                <div className='w-[900px] m-auto pt-10 pb-10'>
-                    <div className='relative'>
-                        <label htmlFor="forFoodrest" className='absolute right-5 top-3'><FaSearch fontSize={20} className='text-gray-500'/></label>
-                        <input type="text" className='border border-gray-400 shadow rounded-sm px-3 py-2 w-full mb-10 focus:outline-none' id='forFoodrest' placeholder='Search for Restourant and foods...' />
-                    </div>
+                <div className='w-[1000px] m-auto pt-10 pb-10'>
                     <div className='flex justify-between'>
-                        <h1 className='text-3xl font-semibold'>Popular Cuisines</h1>
+                        <h1 className='text-3xl font-semibold'>Top restaurant in your area</h1>
                         <div className='flex gap-3'>
                             <span className="flex items-center justify-center cursor-pointer text-base bg-slate-300 rounded-full h-8 w-8" onClick={moveprevSlide}><FaArrowLeft /></span>
                             <span className="flex items-center justify-center cursor-pointer text-base bg-slate-300 rounded-full h-8 w-8" onClick={movenextSlide}><FaArrowRight /></span>
                         </div>
                     </div>
-                    <div className='pt-10'>
+                    <div className='pt-10 w-[900px] m-auto'>
                         <ul className='flex overflow-hidden'>
                             {
                                 itemlist.map(item => (
@@ -57,7 +54,7 @@ export default function Search() {
                             
                         </ul>
                     </div>
-                    
+                    <hr/>
                 </div>
             </>
         )
