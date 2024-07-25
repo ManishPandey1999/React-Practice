@@ -24,20 +24,24 @@ export default function Header() {
         },
         {
             icon: <BiSolidOffer/>,
-            name: "Offers"
+            name: "Offers",
+            url: "/offers"
         },
         {
             icon: <LuBadgeHelp/>,
-            name: "Help"
+            name: "Help",
+            url: "/help"
         },
         {
             icon: <FaRegUser/>,
-            name: "Sign In"
+            name: "Sign In",
+            url: "/signin"
         },
         {
             icon: <CiShoppingCart/>,
-            name: "Cart"
-        },
+            name: "Cart",
+            url: "/cart"
+        }
     ]
 
 
