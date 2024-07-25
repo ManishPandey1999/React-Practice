@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import fetchItems from '../Fetch_Data/Axios';
 import { FaArrowLeft, FaArrowRight, FaSearch } from "react-icons/fa";
 
 export default function Search() {
@@ -9,11 +9,9 @@ export default function Search() {
     const [itemlist, setItemlist] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://jsonplaceholder.typicode.com/photos/?_limit=20`)
-        .then(res => {
-            const itemlist = res.data;
-            setItemlist(itemlist);
-        })
+        fetchItems('photos', { _limit: 20 }).then((items) => {
+          setItemlist(items);
+        });
     }, []);
 
     const movenextSlide = () => {
