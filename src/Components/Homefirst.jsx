@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import fetchItems from '../Fetch_Data/Axios';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function Homecompfirst() {
@@ -9,12 +9,11 @@ export default function Homecompfirst() {
     const [itemlist, setItemlist] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://jsonplaceholder.typicode.com/photos/?_limit=20`)
-        .then(res => {
-            const itemlist = res.data;
-            setItemlist(itemlist);
-        })
+        fetchItems('photos', { _limit: 20 }).then((items) => {
+          setItemlist(items);
+        });
     }, []);
+
 
     const movenextSlide = () => {
         console.log(itemlist.length)
@@ -30,7 +29,7 @@ export default function Homecompfirst() {
 
         return (
             <>
-                <div className='w-[900px] m-auto pt-10 pb-10'>
+                <div className='w-[1000px] m-auto pt-14 pb-10'>
                     <div className='flex justify-between'>
                         <h1 className='text-3xl font-semibold'>What's in your mind</h1>
                         <div className='flex gap-3'>
@@ -38,7 +37,7 @@ export default function Homecompfirst() {
                             <span className="flex items-center justify-center cursor-pointer text-base bg-slate-300 rounded-full h-8 w-8" onClick={movenextSlide}><FaArrowRight /></span>
                         </div>
                     </div>
-                    <div className='pt-10'>
+                    <div className='pt-10 w-[900px] m-auto'>
                         <ul className='flex overflow-hidden'>
                             {
                                 itemlist.map(item => (
