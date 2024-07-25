@@ -6,3 +6,15 @@
 .background-overlay{
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.header-filter.sticky{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    background: #fff;
+    padding: 16px 0;
+    width: 100%;
+    left: 0;
+    justify-content: center;
+    gap: 40px;
+}
