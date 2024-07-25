@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import fetchItems from '../Fetch_Data/Axios';
 import { IoMdArrowDropdown } from "react-icons/io";
 
 export default function Homefiltercomp() {
@@ -7,13 +7,10 @@ export default function Homefiltercomp() {
     const [itemlist, setItemlist] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://jsonplaceholder.typicode.com/photos/?_limit=20`)
-        .then(res => {
-            const itemlist = res.data;
-            setItemlist(itemlist);
-        })
+        fetchItems('photos', { _limit: 20 }).then((items) => {
+          setItemlist(items);
+        });
     }, []);
-
 
         
         const [isSticky, setSticky] = useState(false);
