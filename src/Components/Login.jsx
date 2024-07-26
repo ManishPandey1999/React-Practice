@@ -49,13 +49,13 @@ function Login() {
   };
 
   return (
-    <div className='bg-white w-[300px] absolute duration-[400ms] flex justify-center'>
+    <div className='bg-white w-[300px] absolute duration-[400ms] mt-4 flex justify-center'>
     {!submitted && (
       <form onSubmit={handleSubmit}>
         <label>
-          title:
+          Name:
           <input
-            className='border border-gray-400 shadow rounded-sm px-3 py-2 w-full mb-10 focus:outline-none'
+            className='border border-gray-400 shadow rounded-sm px-3 py-2 w-full mb-4 focus:outline-none'
             type="text"
             name="title"
             value={formData.title}
@@ -65,9 +65,9 @@ function Login() {
         
         
         <label>
-          body:
+          Email:
           <input
-            className='border border-gray-400 shadow rounded-sm px-3 py-2 w-full mb'
+            className='border border-gray-400 shadow rounded-sm px-3 py-2 w-full focus:outline-none'
             type="text"
             name="body"
             value={formData.body}

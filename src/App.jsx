@@ -2,9 +2,12 @@ import './App.css';
 import Header from "./Components/Header";
 import Testing from "./Components/Testing";
 import Home from "./Components/Home";
-import Footer from './Components/Footer'
+import ConditionalFooter from './Components/Conditionalfooter'
 import Search from './Components/Search'
+import Offers from './Components/Offers'
+import Help from './Components/Help'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -14,8 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
-      </Routes>
-      <Footer />
+        <Route path="/offers" element={<Offers />} />
+        <Route path="/help" element={<Help />} />
+      </Routes>      
+      <ConditionalFooter />       
     </Router>
   );
 }
