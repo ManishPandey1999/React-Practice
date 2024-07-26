@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import fetchItems from '../Fetch_Data/Axios';
+import fetchItems from '../Fetch_Data/Axiosget';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function Homecompsecond() {
@@ -13,7 +13,6 @@ export default function Homecompsecond() {
           setItemlist(items);
         });
     }, []);
-
 
     const movenextSlide = () => {
         console.log(itemlist.length)
@@ -29,15 +28,15 @@ export default function Homecompsecond() {
 
         return (
             <>
-                <div className='w-[1000px] m-auto pt-10 pb-10'>
+                <div className='w-[900px] m-auto pt-10 pb-10'>
                     <div className='flex justify-between'>
-                        <h1 className='text-3xl font-semibold'>Top restaurant in your area</h1>
+                        <h1 className='text-3xl font-semibold'>Top restaurant chains in your area</h1>
                         <div className='flex gap-3'>
                             <span className="flex items-center justify-center cursor-pointer text-base bg-slate-300 rounded-full h-8 w-8" onClick={moveprevSlide}><FaArrowLeft /></span>
                             <span className="flex items-center justify-center cursor-pointer text-base bg-slate-300 rounded-full h-8 w-8" onClick={movenextSlide}><FaArrowRight /></span>
                         </div>
                     </div>
-                    <div className='pt-10 w-[900px] m-auto'>
+                    <div className='pt-10'>
                         <ul className='flex overflow-hidden'>
                             {
                                 itemlist.map(item => (

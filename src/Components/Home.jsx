@@ -1,13 +1,13 @@
 import React from 'react'
-import Homecompfirst from './Homecompfirst'
-import Homecompsecond from './Homecompsecond'
+import Homefirst from './Homefirst'
+import HomeSecond from './Homesecond'
 import Homefiltercomp from './Homefiltercomp'
 
 export default function Home() {
   return (
     <>
-        <Homecompfirst />
-        <Homecompsecond />
+        <Homefirst />
+        <HomeSecond />
         <Homefiltercomp />
     </>
   )

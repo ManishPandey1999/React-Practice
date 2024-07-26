@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import fetchItems from '../Fetch_Data/Axios';
+import fetchItems from '../Fetch_Data/Axiosget';
 import { IoMdArrowDropdown } from "react-icons/io";
 
 export default function Homefiltercomp() {
@@ -11,6 +11,7 @@ export default function Homefiltercomp() {
           setItemlist(items);
         });
     }, []);
+
 
         
         const [isSticky, setSticky] = useState(false);

@@ -7,15 +7,25 @@ import { FaRegUser } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import Login from './Login'
 
 export default function Header() {
     const[toggle, setToggle] = useState(false);
+    const[togglelogin, setTogglelogin] = useState(false);
     const showSidemenu = () => {
         setToggle(true)
     }
     const hideSidemenu = () => {
         setToggle(false)
     }
+
+    const showlogin = () => {
+        setTogglelogin(true)
+    }
+    const hidelogin = () => {
+        setTogglelogin(false)
+    }
+    
     const headerList =[
         {
             icon: <FaSearch/>,
@@ -25,23 +35,24 @@ export default function Header() {
         {
             icon: <BiSolidOffer/>,
             name: "Offers",
-            url: "/offers"
+            url: "/Offers"
+            
         },
         {
             icon: <LuBadgeHelp/>,
             name: "Help",
-            url: "/help"
+            url: "/Help"
         },
         {
             icon: <FaRegUser/>,
             name: "Sign In",
-            url: "/signin"
+            url: "/SignIn"
         },
         {
             icon: <CiShoppingCart/>,
             name: "Cart",
-            url: "/cart"
-        }
+            url: "/Cart"
+        },
     ]
 
 
@@ -78,7 +89,7 @@ export default function Header() {
                         <span className='font-bold border-b-2 border-black cursor-pointer hover:text-[red] hover:border-[red]'> Gagaha </span> Gorakhpur, Uttar Pradesh, India <RxCaretDown onClick={showSidemenu} fontSize={25} className='inline text-[red] cursor-pointer' />
                     </div>
                 </div>
-                <div>
+                <div className='flex items-center gap-5'>
                     <ul className='flex items-center gap-10'>
                         {
                             headerList.map(
@@ -93,6 +104,17 @@ export default function Header() {
                             )
                         }
                     </ul>
+                    <div>
+                        <button className='py-1 px-2 border border-gray-400 rounded-lg' onClick={showlogin}>Login</button>
+                        <div className='h-lvh bg-white w-[400px] top-[68px] absolute shadow p-5 z-[100] duration-500' style={{
+                            right: togglelogin ? "0%" : "0",
+                            opacity: togglelogin ? 1 : 0,
+                            visibility: togglelogin ? "visible" : "hidden",                            
+                            }}>
+                            <span className='cursor-pointer'onClick={hidelogin}><IoMdClose fontSize={30} /></span>
+                            <Login />
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

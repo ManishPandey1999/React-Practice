@@ -1,5 +1,6 @@
 import './App.css';
 import Header from "./Components/Header";
+import Testing from "./Components/Testing";
 import Home from "./Components/Home";
 import Footer from './Components/Footer'
 import Search from './Components/Search'
@@ -9,9 +10,10 @@ function App() {
   return (
     <Router>
       <Header />
+      <Testing />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route exact path="/search" element={<Search />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
       <Footer />
     </Router>
