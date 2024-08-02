@@ -106,7 +106,7 @@ export default function Header() {
                     </ul>
                     <div>
                         <button className='py-1 px-2 border border-gray-400 rounded-lg' onClick={showlogin}>Login</button>
-                        <div className='h-lvh bg-white w-[350px] top-[68px] absolute shadow p-5 z-[100] duration-500' style={{
+                        <div className='h-lvh bg-white w-[350px] top-[68px] absolute shadow-2xl p-5 z-[100] duration-500' style={{
                             right: togglelogin ? "0%" : "0",
                             opacity: togglelogin ? 1 : 0,
                             visibility: togglelogin ? "visible" : "hidden",                            

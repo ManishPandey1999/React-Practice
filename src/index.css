@@ -16,3 +16,5 @@
     justify-content: center;
     gap: 40px;
 }
+
+.helptabs .react-tabs__tab--selected{background-color: #fff;}
