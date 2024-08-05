@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import fetchItems from '../Fetch_Data/Axios';
+import fetchItems from '../Fetch_Data/Axiosget';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function Homecompsecond() {
