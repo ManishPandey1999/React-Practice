@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.background-overlay{background: rgba(0,0,0,0.6);}
+.header-filter.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    background-color: #ffffff; 
+    padding: 19px 0;
+    left: 0;
+    justify-content: center;
+    gap: 40px;
+}
+
+.helptabs .react-tabs__tab--selected{background-color: #fff;}
+
+
+@media(max-width: 767px){
+    .showonmobscreen{display: block !important; position: absolute; top: 50px; width: 100vw; left: -16px; background: #fff; padding: 20px; padding-top: 0;}
+    .showonmobscreen ul{display: block;}
+    .showonmobscreen ul li{padding: 10px 15px; margin: 10px 0; background: #eeebf2; color: #000; border-radius: 8px;}
+}
